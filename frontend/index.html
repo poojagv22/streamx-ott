@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StreamX OTT</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="checkAuth()">
+
+<!-- Navbar -->
+<header class="navbar">
+  <h1 class="logo">StreamX</h1>
+
+  <!-- Search -->
+  <input type="text" id="search" placeholder="Search movies..." onkeyup="searchMovies()" />
+
+  <div>
+    <button onclick="toggleTheme()">🌙</button>
+    <button onclick="logout()">Logout</button>
+  </div>
+</header>
+
+
+<!-- Hero Section -->
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <h2 id="hero-title">Loading...</h2>
+    <p id="hero-desc"></p>
+    <button onclick="play()">▶ Play</button>
+  </div>
+</section>
+
+<!-- Carousel -->
+<section class="carousel">
+  <div class="slides" id="slides"></div>
+</section>
+
+<!-- Movie Row -->
+<section class="row">
+  <h2>Trending Movies</h2>
+  <div class="row-posters" id="movies"></div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2026 StreamX OTT Platform</p>
+</footer>
+
+<script src="auth.js"></script>
+<script src="script.js"></script>
+
+<!-- Movie Popup -->
+<!-- Movie Popup -->
+<div id="movieModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+
+    <img id="modal-img" />
+    <h2 id="modal-title"></h2>
+    <p id="modal-rating"></p>
+    <p id="modal-desc"></p>
+
+    <!-- ✅ MOVE HERE -->
+    <button id="playTrailer">▶ Watch Trailer</button>
+    <div id="trailer"></div>
+
+  </div>
+</div>
+
+</body>
+</html>
